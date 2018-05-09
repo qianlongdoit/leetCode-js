@@ -13,7 +13,7 @@ var strStr = function (haystack, needle) {
   //  最简单的使用js内置方法
   // return haystack.indexOf(needle);
 
-  //此方法在测试用例特别长的时候回超出时间限制
+  //此方法在测试用例特别长的时候会超出时间限制
   if (!needle) return 0;
   if (haystack.length < needle.length || haystack.indexOf(needle[0]) === -1) return -1;
   let map = {};
