@@ -2,7 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c8ba66-e01d-4c3e-b484-13a6c843dce7" name="默认" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/leetcode.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/1.two sum.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/162.寻找峰值.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/17. 电话号码的字母组合.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/179.最大数.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/26.删除排序数组中的重复项.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/27.移除元素.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/28. 实现strStr().js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/29. 两数相除.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3.无重复字符的最长子串.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/344. 反转字符串.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/35. 搜索插入位置.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/36.有效数独.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/37.解数独.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/48.旋转图像.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/49. 字母异位词分组.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/6.Z字形变换.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/7.反转整数.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/1.冒泡排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/2.选择排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/3.插入排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/4.希尔排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/5.归并排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/6.快速排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/7.堆排序.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/rewrite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/testSample.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -313,12 +349,12 @@
       <workItem from="1524893254196" duration="1212000" />
       <workItem from="1524907616149" duration="207000" />
       <workItem from="1525221484616" duration="14727000" />
-      <workItem from="1525242147401" duration="121802000" />
+      <workItem from="1525242147401" duration="121944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192047000" />
+    <option name="totallyTimeSpent" value="192189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="347" y="32" width="1562" height="1003" extended-state="0" />
