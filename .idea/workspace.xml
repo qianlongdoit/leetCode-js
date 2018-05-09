@@ -2,43 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c8ba66-e01d-4c3e-b484-13a6c843dce7" name="默认" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/leetcode.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/1.two sum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/162.寻找峰值.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/17. 电话号码的字母组合.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/179.最大数.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/26.删除排序数组中的重复项.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/27.移除元素.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/28. 实现strStr().js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/29. 两数相除.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3.无重复字符的最长子串.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/344. 反转字符串.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/35. 搜索插入位置.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/36.有效数独.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/37.解数独.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/48.旋转图像.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/49. 字母异位词分组.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/6.Z字形变换.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/7.反转整数.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/1.冒泡排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/2.选择排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/3.插入排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/4.希尔排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/5.归并排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/6.快速排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/7.堆排序.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/rewrite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/排序算法/testSample.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/22. 括号生成.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/17. 电话号码的字母组合.js" afterPath="$PROJECT_DIR$/17. 电话号码的字母组合.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/37.解数独.js" afterPath="$PROJECT_DIR$/37.解数独.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/排序算法/rewrite.js" afterPath="$PROJECT_DIR$/排序算法/rewrite.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,29 +34,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="17. 电话号码的字母组合.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/17. 电话号码的字母组合.js">
+      <file leaf-file-name="test2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-              <folding>
-                <element signature="e#276#482#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="506">
+              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="37.解数独.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/37.解数独.js">
+      <file leaf-file-name="22. 括号生成.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/22. 括号生成.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1596">
-              <caret line="204" column="48" lean-forward="true" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
-              <folding>
-                <element signature="e#1325#1710#0" expanded="false" />
-                <element signature="n#!!doc;n#fillCertainCell#0" expanded="false" />
-                <element signature="n#!!doc;n#getPossibleValue#0" expanded="false" />
-                <element signature="n#!!doc;n#deepCopy#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,7 +91,6 @@
         <option value="$PROJECT_DIR$/排序算法/1.js" />
         <option value="$PROJECT_DIR$/排序算法/atr.js" />
         <option value="$PROJECT_DIR$/排序算法/6.快速排序.js" />
-        <option value="$PROJECT_DIR$/排序算法/rewrite.js" />
         <option value="$PROJECT_DIR$/排序算法/testSample.js" />
         <option value="$PROJECT_DIR$/179.最大数.js" />
         <option value="$PROJECT_DIR$/排序算法/36.有效数独.js" />
@@ -137,7 +98,6 @@
         <option value="$PROJECT_DIR$/test2.js" />
         <option value="$PROJECT_DIR$/37.解数独-commit.js" />
         <option value="$PROJECT_DIR$/35. 搜索插入位置.js" />
-        <option value="$PROJECT_DIR$/37.解数独.js" />
         <option value="$PROJECT_DIR$/29. 两数相除.js" />
         <option value="$PROJECT_DIR$/162.寻找峰值.js" />
         <option value="$PROJECT_DIR$/27.移除元素.js" />
@@ -145,7 +105,10 @@
         <option value="$PROJECT_DIR$/344. 反转字符串.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/28. 实现strStr().js" />
+        <option value="$PROJECT_DIR$/排序算法/rewrite.js" />
         <option value="$PROJECT_DIR$/17. 电话号码的字母组合.js" />
+        <option value="$PROJECT_DIR$/37.解数独.js" />
+        <option value="$PROJECT_DIR$/22. 括号生成.js" />
       </list>
     </option>
   </component>
@@ -162,8 +125,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="347" />
-    <option name="y" value="32" />
+    <option name="x" value="349" />
+    <option name="y" value="92" />
     <option name="width" value="1562" />
     <option name="height" value="1003" />
   </component>
@@ -349,32 +312,40 @@
       <workItem from="1524893254196" duration="1212000" />
       <workItem from="1524907616149" duration="207000" />
       <workItem from="1525221484616" duration="14727000" />
-      <workItem from="1525242147401" duration="121944000" />
+      <workItem from="1525242147401" duration="139357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192189000" />
+    <option name="totallyTimeSpent" value="209602000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="347" y="32" width="1562" height="1003" extended-state="0" />
-    <editor active="true" />
+    <frame x="349" y="92" width="1562" height="1003" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13258575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18865435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4335484" sideWeight="0.5022861" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42619047" sideWeight="0.49771392" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20833333" sideWeight="0.49771392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25714287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39930955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39880952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -411,25 +382,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/排序算法/6.快速排序.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="28" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-            <element signature="n#!!block;n#quickSort_outPlace#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/排序算法/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/179.最大数.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -663,16 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/排序算法/rewrite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="41" column="67" lean-forward="true" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-          <folding>
-            <element signature="n#!!doc;n#quickSort#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/排序算法/7.堆排序.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
@@ -701,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-626">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3.Longest Substring Without Reapting Characters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -733,28 +667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/排序算法/testSample.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc;n#getRandomArray#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/37.解数独-commit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2197">
           <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/29. 两数相除.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -774,14 +690,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/35. 搜索插入位置.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,6 +717,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/35. 搜索插入位置.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29. 两数相除.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="41" column="42" lean-forward="true" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/排序算法/rewrite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc;n#quickSort#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/17. 电话号码的字母组合.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="e#278#484#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/排序算法/testSample.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc;n#getRandomArray#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/37.解数独.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#1399#1784#0" expanded="false" />
+            <element signature="n#!!doc;n#fillCertainCell#0" expanded="false" />
+            <element signature="n#!!doc;n#getPossibleValue#0" expanded="false" />
+            <element signature="n#!!doc;n#deepCopy#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -819,26 +794,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/37.解数独.js">
+    <entry file="file://$PROJECT_DIR$/test2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="204" column="48" lean-forward="true" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
-          <folding>
-            <element signature="e#1325#1710#0" expanded="false" />
-            <element signature="n#!!doc;n#fillCertainCell#0" expanded="false" />
-            <element signature="n#!!doc;n#getPossibleValue#0" expanded="false" />
-            <element signature="n#!!doc;n#deepCopy#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="506">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/17. 电话号码的字母组合.js">
+    <entry file="file://$PROJECT_DIR$/22. 括号生成.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-          <folding>
-            <element signature="e#276#482#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="220">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -24,7 +24,8 @@ function partition(arr, left, right) {
   return less;
 }
 
-function sort(arr, left, right) {  if (left < right) {
+function sort(arr, left, right) {
+  if (left < right) {
     let pivot = partition(arr, left, right);
     console.log('+++++++++',pivot,'+++++++++')
     console.log(arr)

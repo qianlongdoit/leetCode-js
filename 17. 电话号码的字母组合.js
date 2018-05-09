@@ -11,7 +11,7 @@
  * @return {string[]}
  */
 var letterCombinations = function (digits) {
-  let map = {
+  const map = {
     2: ['a', 'b', 'c'],
     3: ['d', 'e', 'f'],
     4: ['g', 'h', 'i'],
@@ -21,39 +21,41 @@ var letterCombinations = function (digits) {
     8: ['t', 'u', 'v'],
     9: ['w', 'x', 'y', 'z']
   };
+  const len = digits.length;
 
   let result = [];
   let str = '';
-
-  for (let i = 0, len = digits.length; i < len; i++) {
-    str += map[digits[i]][0];
-  }
-  result.push(str);
-
   let move = digits.length - 1;
-  let index = 0;
-  let arr = map[digits[move]];
-  //  所有可能遍历完时，start的值就是第一个数字包含字母的数量了
-  while (!(move === 0 && index === arr.length)) {
-    let char = str[move];
-    arr = map[digits[move]];
-    index = arr.indexOf(char);
 
-    if (arr[index + 1]) {
-      str = str.substring(0, move) + arr[++index];
-      console.log('------------',str)
+  while (move !== -1) {
+    //  如果str长度不够，则补齐
+    if (str.length < digits.length) {
+      for (let i = str.length; i < len; i++) {
+        str += map[digits[i]][0];
+      }
       result.push(str);
-      // break;
-    } else {
-      move--;
-      str = str.substring(0, move);
-      index = 0;
-      console.log('+++++++++++++', str)
     }
+
+    //  从后向前检查，如果此位置还有其他可能值则替换，然后跳出循环
+    for (let i = str.length - 1; i >= 0; i--) {
+      let char = str[i];
+      let arr = map[digits[i]];
+      let index = arr.indexOf(char);
+
+      if (arr[index + 1]) {
+        str = str.substring(0, i) + arr[++index];
+        if (str.length === len) {
+          result.push(str)
+        }
+        break;
+      } else if (i === move) {
+        str = str.substring(0, move--)
+      }
+    }
+
   }
 
-  result.push(str);
   return result;
 };
 
-console.log(letterCombinations('234'));
+console.log(letterCombinations('23452'));

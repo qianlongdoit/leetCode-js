@@ -1,7 +1,7 @@
 /**
  * Created by admin on 2018/5/4.
  */
-/**
+/**解数独的整个思路都整理在这里了 https://blog.csdn.net/q1325545052/article/details/80221242
  * @param {arr[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
