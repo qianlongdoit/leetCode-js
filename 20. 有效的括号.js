@@ -23,7 +23,19 @@
  */
 var isValid = function (s) {
   if (!s) return true;
+  let stack = [];
 
+  for (let i = 0, len = s.length; i < len; i++) {
+    if (!stack.length) stack.push(s[i++]);
+    let last = stack[stack.length - 1];
+    if ((s[i] === ')' && last === '(') || (s[i] === ']' && last === '[') || (s[i] === '}' && last === '{')) {
+      stack.pop()
+    } else {
+      stack.push(s[i])
+    }
+  }
+
+  return !stack.length;
 };
 
 let test = [
@@ -31,4 +43,4 @@ let test = [
   '([)(])',
   '(()())'
 ]
-console.log(isValid("([)]"))
+console.log(isValid(test[2]))
