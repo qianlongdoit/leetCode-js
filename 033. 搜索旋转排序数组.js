@@ -23,46 +23,38 @@
  * @return {number}
  */
 var search = function (nums, target) {
-  if (target < nums[0] && target > nums[nums.length - 1]) return -1;
+  if (!nums.length) return -1;
 
   let left = 0;
-  let right = nums.length;
-  let current = ~~((right - left) / 2) + left;
+  let right = nums.length - 1;
 
-  while (left < right) {
-    //在右区, 即较小的一组
-    if (target < nums[0]) {
+  while (left <= right) {
+    let mid = ~~((right + left) / 2);
+    if (nums[mid] === target) return mid;
 
-      if (nums[current] < target) {
-        left = current;
-      } else if (nums[current] > target) {
-        nums[current] > nums[0] ? left = current: right = current;
-
+    if (nums[mid] >= nums[left]) {  //正确排序时
+      if (nums[left] <= target && target < nums[mid] ) {  //可以找到时
+        right = mid - 1;
       } else {
-        //相等时，就找到了
-        return current;
+        left = mid + 1;
+      }
+    } else {  //错误的排序
+      if (nums[mid] < target && target <= nums[right]) {  //数值在错误的区间上
+        left = mid + 1;
+      } else {
+        right = mid - 1;
       }
     }
 
-    //在左区， 即较大的一组
-    if (target >= nums[0]) {
-      if (nums[current] > target) {
-        right = current;
-      } else if (nums[current] < target) {
-        nums[current] > nums[left] ? left = current: right = current;
-      } else {
-        return current;
-      }
-    }
-
-    current = ~~((right - left) / 2) + left;
+    console.log(left, mid, right, '-------------')
   }
 
   return -1;
 };
 
 // let arr = [4,5,6,7,0,1,2];
-let arr = [1,2,3];
+let arr = [3, 2, 1];
+// let arr = [1];
 
 
-console.log(search(arr, 0));
+console.log(search(arr, 3));
