@@ -65,6 +65,6 @@ let matrix = [
   [12, 13, 15]
 ];
 
-matrix = [[2000000000]]
+// matrix = [[2000000000]]
 console.log(kthSmallest(matrix, 1))
 // console.log(getCountLessThan(matrix, 14))
