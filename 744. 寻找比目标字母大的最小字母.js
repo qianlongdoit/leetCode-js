@@ -35,9 +35,6 @@ var nextGreatestLetter = function (letters, target) {
 
   }
 
-  console.log(left)
-  console.log(letters.length,'---')
-  console.log((left + 1) % letters.length,'---')
   return letters[left] === target ? letters[(left + 1) % letters.length] : letters[left];
 };
 
