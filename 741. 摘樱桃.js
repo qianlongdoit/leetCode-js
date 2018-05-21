@@ -50,15 +50,47 @@ var cherryPickup = function (grid) {
   let dp = [];
   for (let i = 0; i < n; i++) {
     dp[i] = [];
+    for (let j = 0; j < n; j++) {
+      dp[i][j] = -1;
+    }
   }
 
   dp[0][0] = grid[0][0];  //  路径长度为0时
 
   let maxK = 2 * (n - 1); //  从(0,0)→→(n-1, n-1)的步数
-  for (let k = 0; k <= maxK; k++) {
+  for (let k = 1; k <= maxK; k++) {
 
+    let maxL = Math.min(k, n - 1);  //
+    //  第一条长度为k的路，最终抵达(i, k - i)
+    for (let i = maxL; i >= 0; i--) {
+      if (k - i >= n) continue; //  ????????
+      //  第二条长度为k的路，最终抵达(j, k - j)
+      for (let j = maxL; j >= 0; j--) {
+        if (k - j >= n) continue; //  ???????
+
+        if (grid[i][k - i] < 0 || grid[j][k - j] < 0) { //  跳有过刺区域
+          dp[i][j] = -1;
+          continue;
+        }
+
+        if (i > 0) dp[i][j] = Math.max(dp[i][j], dp[i - 1][j]);
+        if (j > 0) dp[i][j] = Math.max(dp[i][j], dp[i][j - 1]);
+        if (i > 0 && j > 0) dp[i][j] = Math.max(dp[i][j], dp[i - 1][j - 1]);
+
+        //  如果没有路能到达(i, k - i) - (j, k - j)
+        if (dp[i][j] === -1) continue;
+
+        //  拾取(i,k-i)及(j,k-j)位置的樱桃，如果 i != j,否则只取其中一个位置的樱桃
+        dp[i][j] += grid[i][k - i] + (i === j ? 0 : grid[j][k - j]);
+
+        console.log(dp,'---k---', k,'---i---j---',i,j);
+
+      }
+    }
   }
 
+  console.log(dp);
+  return Math.max(dp[n - 1][n - 1], 0);
 };
 
 let Grid = [
