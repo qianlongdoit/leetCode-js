@@ -6,16 +6,13 @@
  * @return {string}
  */
 var largestNumber = function (nums) {
-  let result = ''
+  if (nums[0] === 0) return '0';
   nums.sort((a, b)=>{
     a +='';
     b +='';
     return (b + a) - (a + b);
   });
-  result = nums.join('')
-
-  if (result[0] === '0' && result.length !== 1) return '0';
-  return result;
+  return nums.join('');
 };
 
 var arr = [3, 30, 34, 5, 9, 2]
