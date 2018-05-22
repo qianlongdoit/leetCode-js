@@ -119,10 +119,10 @@ var cherryPickup2 = function (grid) {
 
     let maxL = Math.min(k, n - 1);
     //  第一条长度k的路，最终抵达(i, k-i);
-    for (let i = 0; i <= maxL; i++) {
+    for (let i = maxL; i >= 0; i--) {
       if (k - i >= n) continue; //判断越界，碰到边界后跳过，保证（i, k-i）在grid中
       //  第二条长度为k的路，最终抵达(j, k-j)
-      for (let j = 0; j <= maxL; j++) {
+      for (let j = maxL; j >= 0; j--) {
         if (k - j >= n) continue;
 
         //  如果碰到荆棘，则跳过
@@ -160,5 +160,5 @@ let Grid = [
   [1, 0, 1, 1, 1]
 ];
 
-cherryPickup2(Grid)
-// console.log(cherryPickup(Grid));
+// cherryPickup2(Grid)
+console.log(cherryPickup(Grid));
