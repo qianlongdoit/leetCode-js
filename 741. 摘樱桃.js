@@ -32,7 +32,7 @@
  * 问题转化：
  * 问题转为求解有2条路同时从(0,0)出发，走了k步后
  * 第一个人到达(x,k-x),第二个人(y,k-y)时两个人最大收益和
- * dp(k,x,y) = Math.max(dp(k-1,x,y), dp(k-1,x-1,y), dp(k-1,x,y-1), dp(k-1,x-1,y-1))
+ * dp(k,x,y) = max{dp(k-1,x,y), dp(k-1,x-1,y), dp(k-1,x,y-1), dp(k-1,x-1,y-1)} + gird(i,k-i) + grid(j, k-j)
  * 由于dp(k,x,y)只依赖于dp(k-1,x,y)，与dp(k-2,x,y)、dp(k-3,x,y)...没有关系
  * 所以空间复杂度可以压缩至O(n^2)，用一个二维数组就可以了
  *
@@ -65,10 +65,10 @@ var cherryPickup = function (grid) {
     let maxL = Math.min(k, n - 1);  //
     //  第一条长度为k的路，最终抵达(i, k - i)
     for (let i = maxL; i >= 0; i--) {
-      if (k - i >= n) continue; //  ????????
+      if (k - i >= n) continue; //  判断越界问题
       //  第二条长度为k的路，最终抵达(j, k - j)
       for (let j = maxL; j >= 0; j--) {
-        if (k - j >= n) continue; //  ???????
+        if (k - j >= n) continue; //  判断越界问题
 
         if (grid[i][k - i] < 0 || grid[j][k - j] < 0) { //  跳有过刺区域
           dp[i][j] = -1;
@@ -94,64 +94,6 @@ var cherryPickup = function (grid) {
   console.log(dp);
   return Math.max(dp[n - 1][n - 1], 0);
 };
-
-/**直观理解， O(n^3)空间复杂度解法，便于理解！
- * dp(k,x,y) = max{dp(k-1,x,y), dp(k-1,x-1,y), dp(k-1,x,y-1), dp(k-1,x-1,y-1)} + gird(i,k-i) + grid(j, k-j)
- */
-var cherryPickup2 = function (grid) {
-  let n = grid.length;
-  const maxStep = 2 * (n - 1);  //  设定最大步数
-  let dp = [];
-  for (let k = 0; k <= maxStep; k++) {
-    dp[k] = [];
-    for (let i = 0; i < n; i++) {
-      dp[k][i] = [];
-      for (let j = 0; j < n; j++) {
-        dp[k][i][j] = -1;
-      }
-    }
-  }
-
-  dp[0][0][0] = grid[0][0]; //  设定初始值
-
-  //  从第一步开始
-  for (let k = 1; k <= maxStep; k++) {
-
-    let maxL = Math.min(k, n - 1);
-    //  第一条长度k的路，最终抵达(i, k-i);
-    for (let i = maxL; i >= 0; i--) {
-      if (k - i >= n) continue; //判断越界，碰到边界后跳过，保证（i, k-i）在grid中
-      //  第二条长度为k的路，最终抵达(j, k-j)
-      for (let j = maxL; j >= 0; j--) {
-        if (k - j >= n) continue;
-
-        //  如果碰到荆棘，则跳过
-        if (grid[i][k - i] < 0 || grid[j][k - j] < 0) {
-          dp[k][i][j] = -1;
-          continue;
-        }
-
-        //  枚举2条路的所有终点可能性，选取其中最大值作为dp(k,i,j)
-        //  dp(k,x,y)即为k-1步组合的最优解，即(i,k-i)与(j,k-j)前一个点的组合最大值
-        let cherries = dp[k - 1][i][j];
-        console.log(cherries,'------', i ,j)
-        if (i > 0) cherries = Math.max(cherries, dp[k - 1][i - 1][j]);
-        if (j > 0) cherries = Math.max(cherries, dp[k - 1][i][j - 1]);
-        if (i > 0 && j > 0) cherries = Math.max(cherries, dp[k - 1][i - 1][j - 1]);
-
-        //  没有路能够到达(i,k-i)和(j,k-j)
-        if (cherries === -1) continue;
-
-        dp[k][i][j] = cherries + grid[i][k - i] + (i === j ? 0 : grid[j][k - j]);
-
-        console.log(dp[k], '---k---', k, '---i---j---', i, j);
-      }
-    }
-  }
-
-  console.log(dp[n - 1])
-};
-
 let Grid = [
   [1, 1, 1, 0, 1],
   [0, 0, 0, 0, 0],
@@ -160,5 +102,4 @@ let Grid = [
   [1, 0, 1, 1, 1]
 ];
 
-// cherryPickup2(Grid)
 console.log(cherryPickup(Grid));
