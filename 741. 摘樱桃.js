@@ -62,7 +62,7 @@ var cherryPickup = function (grid) {
   let maxK = 2 * (n - 1); //  从(0,0)→→(n-1, n-1)的步数
   for (let k = 1; k <= maxK; k++) {
 
-    let maxL = Math.min(k, n - 1);  //
+    let maxL = Math.min(k, n - 1);
     //  第一条长度为k的路，最终抵达(i, k - i)
     for (let i = maxL; i >= 0; i--) {
       if (k - i >= n) continue; //  判断越界问题
