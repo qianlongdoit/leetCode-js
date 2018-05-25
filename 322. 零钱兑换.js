@@ -12,11 +12,8 @@
  * 输出: -1
  */
 
-/**问题分为
- *  1. 能否凑出目标数字
- *  2. 凑出目标数字，最少需要多少个硬币
- * n种面额的硬币就是一个n维数组（可以优化为 n-1 维）
- * 用来记录用i个硬币时所有可能出现的结果
+/**从0开始递推，dp[i]表示为，凑出数字i，需要的最少硬币数量
+ * 这样就建立了符合题意的递推关系
  *
  * @param {number[]} coins
  * @param {number} amount
@@ -24,28 +21,20 @@
  */
 var coinChange = function (coins, amount) {
   if (amount === 0) return 0;
+  let dp = [0];
 
-  let total = 0;
-  let n = coins.length;
-  let dp = [];
-
-
-  function count(total, n) {
-    if (total > amount) return -1;
-    if (total === amount) return n;
-
-    if (total < amount) {
-      for (let i = 0, len = coins.length; i < len; i++) {
-
-        console.log(total, n, i)
-        count(total + coins[i], n++)
+  for (let i = 1; i <= amount; i++) {
+    if (!dp[i]) dp[i] = amount + 1;
+    for (let j = 0, len = coins.length; j < len; j++) {
+      if (i >= coins[j]) {
+        dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
       }
-
     }
   }
 
-  count(0, 0)
+  console.log(dp[amount])
+  return dp[amount] > amount ? -1 : dp[amount];
 };
 
 // console.log(coinChange([1, 2, 5], 11))
-console.log(coinChange([186, 419, 83, 408], 6249))
+console.log(coinChange([186, 419, 83], 83 + 186 + 419))
