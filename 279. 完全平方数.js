@@ -18,5 +18,23 @@
  * @return {number}
  */
 var numSquares = function(n) {
+  let dp = [0, 1];
 
+  for (let i = 2; i <= n; i++) {
+    if (!dp[i]) dp[i] = i;
+
+    if (Math.sqrt(i) === ~~Math.sqrt(i)) {
+      dp[i] = 1;
+      continue;
+    }
+    for (let j = 1; j * j <= i; j++) {
+      dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+
+    }
+  }
+
+  console.log(dp)
+  return dp[n];
 };
+
+numSquares(99)
