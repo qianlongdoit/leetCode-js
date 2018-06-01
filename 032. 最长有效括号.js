@@ -21,7 +21,7 @@
  * @param {string} s
  * @return {number}
  */
-var longestValidParentheses = function(s) {
+var longestValidParentheses = function (s) {
   if (!s) return 0;
 
   let start = 0;
@@ -58,16 +58,44 @@ var longestValidParentheses = function(s) {
  * @param {string} s
  * @return {number}
  */
-var longestValidParentheses2 = function(s) {
+var longestValidParentheses2 = function (s) {
+  if (!s) return 0;
   let stack = [];
 
+  //  s按规则进行压栈、出栈操作
   for (let i = 0, len = s.length; i < len; i++) {
-    if (s[i] === '(') {
-      stack.push(i);
+    if (s[i] === '(' || i === 0) {
+      stack.push({
+        index: i,
+        bracket: s[i]
+      });
     } else {
-      
+      if (stack.length && stack[stack.length - 1].bracket === '(') {
+        stack.pop();
+      } else {
+        stack.push({
+          index: i,
+          bracket: s[i]
+        })
+      }
     }
   }
+
+  let maxLength = 0;
+  //  获取最长有效括号的子串长度
+  if (!stack.length) return s.length;
+  //  当最后一位出栈了，无法计算括号长度时
+  if (stack[stack.length - 1].index !== s.length - 1) stack.push({index: s.length});
+  //  当第一位出栈了
+  if (stack[0].index !== 0) maxLength = stack[0].index;
+  for (let i = 0, len = stack.length; i < len; i++) {
+    if (i + 1 < len && stack[i].index + 1 !== stack[i + 1].index) {
+      maxLength = Math.max(maxLength, stack[i + 1].index - stack[i].index - 1);
+    }
+  }
+
+  console.log(stack)
+  return maxLength;
 };
 
 // var s = ')())()((()()('
