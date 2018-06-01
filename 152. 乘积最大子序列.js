@@ -19,12 +19,38 @@
  */
 var maxProduct = function (nums) {
   if (!nums.length) return 0;
+  if (nums.length === 1) return nums[0];
   let maxPositive = 0;
   let minNegative = 0;
   let curPositive = 0;
   let curNegative = 0;
 
   for (let i = 0, len = nums.length; i < len; i++) {
-    
+      if (nums[i] === 0) {
+        curPositive = curNegative = 0;
+      }
+
+      if (nums[i] > 0) {
+        curPositive = Math.max(nums[i], curPositive * nums[i]);
+        curNegative = Math.min(0 , curNegative * nums[i]);
+      }
+
+      if (nums[i] < 0) {
+        let tempP = curPositive;
+        curPositive = Math.max(0, curNegative * nums[i]);
+        curNegative = Math.min(nums[i], tempP * nums[i]);
+      }
+
+    maxPositive = Math.max(maxPositive, curPositive);
+    minNegative = Math.min(minNegative, curNegative);
+
+    console.log(curPositive, curNegative, maxPositive, minNegative)
   }
+
+  return maxPositive;
 };
+
+var arr = [-2, 1, 2, -3, 0, 3, -3, -2, 2, 1];
+// var arr = [3, -1, 4];
+
+console.log(maxProduct(arr))
