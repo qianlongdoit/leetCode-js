@@ -30,7 +30,7 @@ var minWindow = function(s, t) {
   let slow = 0;
   let fast = 0;
   let map = {};
-  let result = 0;
+  let result = '';
 
   for (let i = 0, len = s.length; i < len; i++) {
     //  s[i]在t中
@@ -41,20 +41,41 @@ var minWindow = function(s, t) {
   let standard = Object.assign({}, map); //复制一份作为标准
 
   while (slow <= fast) {
-    //  如果当前字符在t中
-    if (t[s[fast]] !== 'undefined') {
-      if (t[s[fast]] === 0) {
-        //如果是第一添加
+    //  开始slow移动到包含在t中的字符串的位置
+    while (map[s[slow]] === 'undefined') {
+      slow++;
+    }
+    while (map[s[fast]] === 'undefined') {
+      fast++;
+    }
+
+    //  fast需要移动的时候
+    if (count < t.length || map[s[slow]] + 1 < standard[s[slow]]) {
+
+      fast++;
+    }
+
+    //  每次碰到t中字符时判断
+    if (map[s[fast]] !== 'undefined') {
+      //  记录slow-fast中有效t中字符的数量
+      if (map[s[fast]] <= standard[s[fast]]) {
         count++;
-      } else {
-        
+      } else if (count === t.length) {  //  如果slow-fast包含t中全部在字符
+        //  如果slow指针移动到包含t中字符处，而且该字符数量大于1，就开始移动slow指针
+        if (map[s[slow]] !== 'undefined' && map[s[slow]] > 1) {
+          slow++;
+          map[s[slow]]--;
+        }
+
+      }
+
+      //  如果当前slow-fast是否包含t
+      if (count === t.length) {
+        let temp =  s.slice(slow, fast + 1);
+        result = result.length <  temp.length ? temp : result;
       }
       map[s[fast]]++;
 
-      //  检查当前slow-fast是否包含t
-      if (count === t.length) {
-        result = s.slice(slow, fast + 1);
-      }
     }
   }
 
