@@ -59,20 +59,18 @@ var minWindow = function (s, t) {
 
   while (slow <= fast && fast < s.length) {
     //  如果结果比上次长度小，记录此次的结果
-    if (count === t.length && fast - slow + 1 < result.length ) {
+    if (count === t.length && fast - slow + 1 < result.length) {
       result = s.slice(slow, fast + 1);
     }
 
     //  slow需要移动的情况
-    if (map[s[slow]] === undefined){
+    if (map[s[slow]] === undefined) {
       slow++;
     } else if (count === t.length && map[s[slow]] > standard[s[slow]]) {
       map[s[slow++]]--;
     } else {
       //  此时才是fast需要移动的时候
-      // if (s[fast] === undefined) {
-        fast++;
-      // }
+      fast++;
 
       if (map[s[fast]] !== undefined) {
         if (map[s[fast]] < standard[s[fast]]) {
@@ -82,21 +80,17 @@ var minWindow = function (s, t) {
       }
     }
 
-    console.log(count, '---------', map, slow, fast, '----------', map[s[slow]], standard[s[slow]], s.slice(slow, fast + 1))
-
-
+    // console.log(count, '---------', slow, fast, '----------', map[s[slow]], standard[s[slow]], s.slice(slow, fast + 1))
     //  终止条件: fast无法移动 且 slow无法移动
     if (fast >= s.length && (slow >= s.length || map[s[slow]] <= standard[s[slow]])) {
-      if (count < t.length) return '';
       break;
     }
   }
 
-  return result;
+  return count !== t.length ? '' : result;
 };
 
 // console.log(minWindow("ADOBECODEBANC", "ABC"))
-// console.log(minWindow("abcccc", "bc"))
+console.log(minWindow("abcccc", "bc"))
 // console.log(minWindow("bba", "ab"))
-console.log(minWindow("bba", "f"))
 // console.log(minWindow("dcabefgecdaecf", "cae"))
