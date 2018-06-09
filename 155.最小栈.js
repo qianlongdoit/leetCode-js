@@ -19,53 +19,60 @@
  */
 
 
-/**
+/**可以这样设计，用一个栈来记录最小值，如下规则
+ *    1.push时如果栈为空，则把数组index及value放入栈中；
+ *    2.------如果栈不为空，比较当前栈顶元素，如果比栈顶元素小，则放入栈中，否则无视；
+ *    3.pop时，比较数组长度和栈顶元素的index，如果index > length - 1则说明当前栈顶元素过期了，栈顶元素弹出，
+ *      否则栈顶元素仍然是当前最小值
+ *
+ *  优化空间：
+ *    不用存value，存index即可。
  * initialize your data structure here.
  */
-var MinStack = function() {
+var MinStack = function () {
   this.stack = [];
-  this.minStack = [];
-  this.left = 0;
-  this.right = 0;
+  this.arr = [];
 };
 
 /**
  * @param {number} x
  * @return {void}
  */
-MinStack.prototype.push = function(x) {
+MinStack.prototype.push = function (x) {
   let stack = this.stack;
-  let minStack = this.minStack;
-  this.right++;
-  if (!minStack.length || minStack[minStack.length - 1] < x) {
-    minStack.push(x);
+  let arr = this.arr;
+
+  if (!stack.length || arr[stack[stack.length - 1]] > x) {
+    stack.push(arr.length);
   }
-  stack.push(x);
+  arr.push(x);
 };
 
 /**
  * @return {void}
  */
-MinStack.prototype.pop = function() {
-  this.left++;
-  if (this.left > this.minStack[0].index) {
-    this.minStack.pop();
+MinStack.prototype.pop = function () {
+  let stack = this.stack;
+  let arr = this.arr;
+  if (stack.length && stack[stack.length - 1] >= arr.length - 1) {
+    stack.pop();
   }
-    this.stack.pop();
+  arr.pop();
 };
 
 /**
  * @return {number}
  */
-MinStack.prototype.top = function() {
-  return this.stack[0];
+MinStack.prototype.top = function () {
+  return this.arr[this.arr.length - 1];
 };
 
 /**
  * @return {number}
  */
-MinStack.prototype.getMin = function() {
-  return this.stack.pop();
+MinStack.prototype.getMin = function () {
+  let stack = this.stack;
+  return this.arr[stack[stack.length - 1]];
 };
 
 /**
