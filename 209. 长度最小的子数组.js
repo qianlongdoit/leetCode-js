@@ -11,7 +11,8 @@
  * 如果你已经完成了O(n) 时间复杂度的解法, 请尝试 O(n log n) 时间复杂度的解法。
  */
 
-/**华东窗口问题
+/**滑动窗口问题
+ * 子数组是连续的！
  * @param {number} s
  * @param {number[]} nums
  * @return {number}
