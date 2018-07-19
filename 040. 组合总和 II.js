@@ -29,23 +29,40 @@
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function(candidates, target) {
+var combinationSum2 = function (candidates, target) {
     var result = [];
     var arr = [];
 
-    candidates.sort( (a, b) => a - b);
+    candidates.sort((a, b) => a - b);
 
     arr.push(candidates[0]);
 
     var sum = candidates[0];
-    var current = 0;
     while (arr.length) {
+        // console.log(arr, sum, result.length);
+        var current = candidates.indexOf(arr[arr.length - 1]);
         if (sum < target) {
-            arr.push(candidates[current])
+            if (arr[arr.length - 1] === candidates[current]) {
+                //  当candidates中有重复元素的时候，每个重复的元素之能取一次，arr.indexOf只能取到首次出现的索引
+                //  如果改成对象存储数组的话就不需要计算这个重复的长度了
+                var start = arr.indexOf(arr[arr.length - 1]);
+                current += arr.length - start;
+            }
+
+            if (current >= candidates.length) {
+                //  当取到candidates字典中最大的数的时候，sum还比target小的话，arr只能取下一个可能的排列了
+                arr = nextNum(arr, candidates);
+                if (arr.length === 0) break;
+                sum = arr.reduce((accum, cur) => accum + cur);
+            } else {
+                //  当不是字典中最大的数的时候，直接累加即可
+                arr.push(candidates[current]);
+                sum += candidates[current];
+            }
         }
 
         if (sum === target) {
-            result.push(arr);
+            result.push(arr.concat([]));
             arr.pop();
             arr = nextNum(arr, candidates);
 
@@ -62,23 +79,35 @@ var combinationSum2 = function(candidates, target) {
         }
 
     }
-    console.log(result);
+
+
+    function nextNum(arr, base) {
+        for (var i = 0, n = arr.length; i < n; i++) {
+            var index = base.indexOf(arr[n - 1 - i]);
+
+            while (index < base.length - 1) {
+                if (base[index + 1] && base[index] === base[index + 1]) {
+                    index++;
+                } else {
+                    break;
+                }
+            }
+
+            arr.length = n - i;
+            if (index + 1 < base.length) {
+                arr[n - 1 - i] = base[index + 1];
+                return arr;
+            }
+        }
+
+        if (arr[0] === base[base.length - 1]) return [];
+
+        return arr;
+    }
+
     return result;
 };
 
-combinationSum2([10,1,2,7,6,1,5], 8)
-
-function nextNum(arr, base) {
-        var index = base.indexOf(arr[arr.length - 1]);
-
-        if (index + 1 < base.length) {
-            arr[arr.length - 1] = base[index + 1];
-        } else {
-            arr = [];
-        }
-
-    console.log(arr)
-    return arr;
-}
-
-// nextNum([10], [1,1,2,5,6,7,10])
+// console.log(combinationSum2([10,1,2,7,6,1,5], 8))
+// console.log(combinationSum2([1], 2))
+console.log(combinationSum2([1,1,1,3,3,5], 8))
