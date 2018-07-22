@@ -33,7 +33,7 @@
  */
 
 
-/**
+/**与题010 类似，采用回溯法解决
  * @param {string} s
  * @param {string} p
  * @return {boolean}
