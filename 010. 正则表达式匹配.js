@@ -45,18 +45,18 @@
  * @param {string} p
  * @return {boolean}
  */
-var isMatch = function(s, p) {
+var isMatch = function (s, p) {
     if (s === p) return true;
 
     var i = 0, m = s.length;
     var j = 0, n = p.length;
     var lastStar, lastStarI;
-    var str = ''
+    var str = []
 
     while (i < m) {
-        console.log(i, j, s[i], p[j], '----', str)
+        console.log(i, j, s[i], p[j], '----', str.join(''), lastStarI)
         if (s[i] === p[j] || p[j] === '.') {
-            str += s[i]
+            str.push(s[i])
             i++, j++;
             continue;
         }
@@ -70,23 +70,32 @@ var isMatch = function(s, p) {
             if (p[j - 1] === '.' && j + 1 === n) return true;   //  以 .* 结尾，可以匹配任意字符串
 
             if (s[i] === p[j + 1]) {    // * 匹配1个p[j - 1]
+                lastStarI = i;
                 j++;
-                // str += s[i];
                 continue;
             }
 
-            if (s[i] === p[j - 1]) {    //  * 匹配1个以上p[i - 1]
-                str += s[i];
+            if (s[i] === p[j - 1] || p[j + 1] === '.') {    //  * 匹配1个以上p[i - 1]
+                str.push(s[i])
+                lastStarI = i;
                 i++;
+
+                if (p[j + 1] === '.' || i === m) j++;
                 continue;
             }
 
-            // if (s[i] === p[j - 1] || p[j - 1] === '.') {    //  *前面的一个字符与s[i]匹配 || *前面的一个字符为 .
-            //     str += s[i]
-            //     i++;
-            //     j++;
-            //     continue;
-            // }
+            //  . * 混合的情况
+            if (p[j - 1] === '.') {
+                lastStarI = i;
+                if (s[i] !== p[j + 1]) {
+                    str.push(s[i])
+                    i++;
+                } else {
+                    i++;
+                    j++;
+                }
+                continue;
+            }
 
         }
 
@@ -98,18 +107,44 @@ var isMatch = function(s, p) {
 
         if (typeof lastStar !== 'undefined') {  //  以上全部不匹配，而且出现过*，则需要回溯
             //  回溯的情况
-            // if (s[i] !== p[j] && )
+            if (s[i] !== p[j] && p[lastStar - 1] === '.') {
+                str[lastStarI] = s[lastStarI];
+                j = lastStar;
+
+                if (s[lastStarI - 1] === p[j + 1]) {    //  . * 中 * 匹配 0 个 .
+                    i = lastStarI - 1;
+                    j++;
+                    str.length = i;
+                }
+            } else {
+                if (j < n) return false;
+                if (typeof lastStarI !== 'undefined') {
+                    i = lastStarI;
+                    j = lastStar;
+                    str[i] = p[j - 1];
+                    str.length = ++i;
+                }
+            }
         }
 
+        if (j >= n) break;
     }
 
-    console.log(str, j)
-    return s === str;
+    console.log(i, j, s[i], p[j], '++++', str.join(''), lastStarI)
+    return s === str.join('') && j === n;
 };
 
-console.log(isMatch('aaaab', 'aa*b'))
+// console.log(isMatch('aaa', 'a'), 'x')
+// console.log(isMatch('aaa', 'a*'))
+// console.log(isMatch('aaaa', 'a*aa'))
+// console.log(isMatch('abcd', 'd*'), 'x')
+// console.log(isMatch('aaaab', 'aa*b'))
 // console.log(isMatch('aab', '.*'))
 // console.log(isMatch('aab', 'c*a*b'))
 // console.log(isMatch('ab', '.*c'), 'x')
+// console.log(isMatch('aab', '.*b'))
+// console.log(isMatch('aabaab', '.*b'))   //需要回溯的例子
+// console.log(isMatch('aab', '.*aab'))    //需要回溯的情况
+console.log(isMatch('aaa', 'ab*a*c*a'))    //需要回溯的情况
 // console.log(isMatch('mississippi', 'mis*is*p*.'), 'x')
 // console.log(isMatch('mississippi', 'mis*is*ip*.'))
