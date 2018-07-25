@@ -55,10 +55,16 @@ var nextPermutation = function (nums) {
 
 var test = [1, 2, 3, 4, 5]
 
-for (let i = 0; i < 15; i++){
-  console.log(test)
-  nextPermutation(test);
+var duplicate = test.concat([]);
+nextPermutation(test);
+while (duplicate.join('') !== test.join('')) {
+    console.log(test)
+    nextPermutation(test);
 }
+// for (let i = 0; i < 15; i++){
+//   console.log(test)
+//   nextPermutation(test);
+// }
 
 
 // function bubbleSort(start, arr) {
