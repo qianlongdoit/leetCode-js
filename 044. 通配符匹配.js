@@ -34,11 +34,12 @@
 
 
 /**与题010 类似，采用回溯法解决
+ *
  * @param {string} s
  * @param {string} p
  * @return {boolean}
  */
-var isMatch = function (s, p) {
+/*var isMatch = function (s, p) {
     if (s === p) return true;
 
     var i = 0, n = s.length;
@@ -113,9 +114,55 @@ var isMatch = function (s, p) {
 
     // console.log(str.join(''), '-------', lastStar)
     return n === str.length;
+};*/
+
+/**尝试更为简洁的dp方法
+ *
+ * @param {string} s
+ * @param {string} p
+ * @return {boolean}
+ */
+var isMatch = function (s, p) {
+    var m = s.length;
+    var n = p.length;
+    var dp = [];
+
+    for (var i = 0; i < m + 1; i++) {
+        dp.push(new Array(n + 1));
+    }
+
+    //  空s匹配空p
+    dp[0][0] = true;
+
+    //  空字符串p匹配非空字符串s 为false
+    for (var i = 0; i < m; i++) {
+        dp[i + 1][0] = false;
+    }
+
+    //  非空p匹配空s
+    for (var j = 0; j < n; j++) {
+        //  如果要匹配成功则必须满足p[0...j-1]匹配 '' 且p[j] === '*'
+        dp[0][j + 1] = p[j] === '*' && dp[0][j];
+    }
+
+    for (var i = 0; i < m; i++) {
+        for (var j = 0; j < n; j++) {
+            if (p[j] !== '*') {
+                //  p[k] !== '*'的时候必须s[0...i-1]与p[0...j-1]匹配，且最后项也匹配
+                dp[i + 1][j + 1] = dp[i][j] && (s[i] === p[j] || p[j] === '?');
+            } else {
+                //  p[j] === '*'时
+                //  * 匹配空字符串时 只需要s[0...i]与p[0...j-1]匹配
+                //  * 匹配任意非空字符串时 s[0...i-1]与p[0...j]匹配(即 * 使用过一次)
+                dp[i + 1][j + 1] = dp[i + 1][j] || dp[i][j + 1];
+            }
+        }
+    }
+
+    return dp[m][n];
 };
 
-console.log(isMatch('abcde', '*e'))
+console.log(isMatch('abcde', 'a*e'))
 console.log(isMatch('abcdeabcde', '*abcde'))
 console.log(isMatch('abcdeabcde', 'a*'))
 console.log(isMatch('abcabcabce', '*ce'))
