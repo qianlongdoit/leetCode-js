@@ -29,7 +29,58 @@
  * @return {number[][]}
  */
 var fourSum = function(nums, target) {
+    if (nums.length < 4) return [];
 
-    //  TODO
+    nums.sort((a, b) => a - b);
+    let len = nums.length;
+    let result = [];
+    let one = 0;
+    while (one < len - 3) {
+        let two = one + 1;
+
+        while (two < len - 2) {
+            let left = two + 1;
+            let right = len - 1;
+
+            let sum = target - nums[one] - nums[two];
+            while (left < right) {
+                if (nums[left] + nums[right] < sum) {
+                    left++;
+                    continue;
+                }
+                if (nums[left] + nums[right] > sum) {
+                    right--;
+                    continue;
+                }
+                if (left - 1 > two && nums[left] === nums[left - 1]) {
+                    left++;
+                    continue;
+                }
+                if (right + 1 < len && nums[right] === nums[right + 1]) {
+                    right--;
+                    continue;
+                }
+
+                result.push([nums[one], nums[two], nums[left], nums[right]]);
+                left++;
+            }
+            //  two指针移动，对移动的过程进行去重
+            two++;
+            while (nums[two] === nums[two - 1]) {
+                two++;
+            }
+        }
+        //  one指针移动，对移动的过程中进行去重
+        one++;
+        while (nums[one] === nums[one - 1]) {
+            one++;
+        }
+    }
+
+    console.log(result)
+    return result
 };
 
+// var nums = [1, 0, -1, 0, -2, 2];
+var nums = [-3,-2,-1,0,0,1,2,3];
+fourSum(nums, 0)
