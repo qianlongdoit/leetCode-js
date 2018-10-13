@@ -39,7 +39,6 @@ var isSameTree = function (p, q) {
         }
 
         if (p.val !== q.val) return isSame = false;
-        // console.log(p.val, q.val);
         traversal(p.left, q.left, isSame);
         traversal(p.right, q.right, isSame)
     }
@@ -120,7 +119,7 @@ let test = [
     }
 ];
 
-test.map((sample, i) => {
+test.forEach((sample, i) => {
     let result = isSameTree(sample.p, sample.q);
     if (!result) console.log(`not same is ${i}`);
 });
