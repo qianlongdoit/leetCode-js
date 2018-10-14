@@ -111,38 +111,40 @@ let nodeTree = {
         }
     }
 };
-nodeTree = {
-        val: 1,
-        left: {
-            val: 2,
-            left: {
-                val: 4,
-                left: null,
-                right: null
-            },
-            right: {
-                val: 5,
-                left: null,
-                right: null
-            }
-        },
-        right: {
-            val: 3,
-            left: {
-                val: 6,
-                left: null,
-                right: null
-            },
-            right: {
-                val: 7,
-                left: null,
-                right: null
-            }
-        }
-    }
+// nodeTree = {
+//         val: 1,
+//         left: {
+//             val: 2,
+//             left: {
+//                 val: 4,
+//                 left: null,
+//                 right: null
+//             },
+//             right: {
+//                 val: 5,
+//                 left: null,
+//                 right: null
+//             }
+//         },
+//         right: {
+//             val: 3,
+//             left: {
+//                 val: 6,
+//                 left: null,
+//                 right: null
+//             },
+//             right: {
+//                 val: 7,
+//                 left: null,
+//                 right: null
+//             }
+//         }
+//     }
 
-posOrderTraversal(nodeTree)
+// posOrderTraversal(nodeTree)
 
+// const node = require('./nodeTree').tree2;
+// binaryTree(node)
 
 /**打印出抛10次硬币的全部可能
  * 0为反面，1为正面

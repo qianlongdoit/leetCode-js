@@ -1,0 +1,123 @@
+/**
+ * Created by admin on 2018/10/13.
+ */
+let tree = {
+    val: 1,
+    left: {
+        val: 2,
+        left: {
+            val: 3,
+            left: null,
+            right: null
+        },
+        right: {
+            val: 4,
+            left: null,
+            right: null
+        }
+    },
+    right: {
+        val: 2,
+        left: {
+            val: 4,
+            left: null,
+            right: null
+        },
+        right: {
+            val: 3,
+            left: null,
+            right: null
+        }
+    }
+};
+let tree2 = {
+    val: 1,
+    left: {
+        val: 2,
+        left: {
+            val: 3,
+            left: null,
+            right: null
+        },
+        right: null
+    },
+    right: {
+        val: 2,
+        left: {
+            val: 3,
+            left: null,
+            right: null
+        },
+        right: null
+    }
+};
+let tree3 = {
+    val: 1,
+    left: {
+        val: 2,
+        left: {
+            val: 3,
+            left: {
+                val: 5,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 6,
+                left: null,
+                right: null
+            }
+        },
+        right: {
+            val: 4,
+            left: {
+                val: 7,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 8,
+                left: null,
+                right: null
+            }
+        }
+    },
+    right: {
+        val: 2,
+        left: {
+            val: 4,
+            left: {
+                val: 8,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 7,
+                left: null,
+                right: null
+            }
+        },
+        right: {
+            val: 3,
+            left: {
+                val: 6,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 5,
+                left: null,
+                right: null
+            }
+        }
+    }
+};
+
+let tree4 = null
+
+module.exports = {
+    tree,
+    tree2,
+    tree3,
+    tree4,
+};

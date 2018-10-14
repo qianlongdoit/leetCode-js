@@ -39,8 +39,8 @@ var isSameTree = function (p, q) {
         }
 
         if (p.val !== q.val) return isSame = false;
-        traversal(p.left, q.left, isSame);
-        traversal(p.right, q.right, isSame)
+        traversal(p.left, q.left);
+        traversal(p.right, q.right)
     }
     return isSame
 };
