@@ -194,6 +194,13 @@ let tree4 = {
             right: null
         }
     }
+};
+
+let arr = {
+    preorder: [
+        {}
+    ],
+    ineorder: []
 }
 
 module.exports = {
