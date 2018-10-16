@@ -33,7 +33,6 @@ function TreeNode(val) {
  * @return {TreeNode}
  */
 var buildTree = function(preorder, inorder) {
-    // let root = restoreTree(preorder, inorder);
 
     function restoreTree(preorder, inorder) {
         if (!preorder.length || !inorder.length) {
@@ -57,73 +56,4 @@ var buildTree = function(preorder, inorder) {
     return restoreTree(preorder, inorder);
 };
 
-function restoreTree(preorder, inorder, root) {
-    if (!preorder.length || !inorder.length) {
-        root.left = null;
-        return root.right = null;
-    }
-
-    root.val = preorder[0];
-    let i = inorder.indexOf(root.val);
-    // console.log(root)
-
-    // debugger
-    let preorderL = preorder.slice(1, i + 1);
-    let preorderR = preorder.slice(i + 1);
-    let inorderL = inorder.slice(0, i);
-    let inorderR = inorder.slice(i + 1);
-// debugger
-    root.left = {};
-    root.right = {};
-    restoreTree(preorderL, inorderL, root.left);
-    restoreTree(preorderR, inorderR, root.right);
-
-}
-
-// var buildTree = function(preorder, inorder) {
-//     if(!preorder || !inorder) {
-//         return null;
-//     }
-//
-//     if(preorder.length !== inorder.length) {
-//         return null;
-//     }
-//
-//     return generate(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
-// };
-
-
-var generate = function(preorder, pl, pr, inorder, il, ir) {
-    if(pl > pr || il > ir) {
-        return null
-    }
-
-
-    var root = new TreeNode(preorder[pl]);
-    var midIndex = -1;
-
-    for(var i = 0; i < inorder.length; i++) {
-        if(inorder[i] === preorder[pl]) {
-            midIndex = i;
-            break;
-        }
-    }
-
-    if(midIndex === -1) {
-        return null;
-    }
-
-    var left = generate(preorder, pl + 1, pl + (midIndex - il), inorder, il, midIndex - 1);
-    var right = generate(preorder, pl + (midIndex - il) + 1, pr, inorder, midIndex + 1, ir);
-
-    root.left = left;
-    root.right = right;
-
-    return root;
-}
-
-var root = {};
-// restoreTree([1,2,4,5,3,6,7], [4,2,5,1,6,3,7], root)
 console.log(buildTree([1, 2, 4, 5, 3, 6, 7], [4, 2, 5, 1, 6, 3, 7]));
-console.log(root);
-console.log(null);
