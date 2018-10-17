@@ -33,27 +33,22 @@ function TreeNode(val) {
  * @return {TreeNode}
  */
 var buildTree = function(preorder, inorder) {
-
-    function restoreTree(preorder, inorder) {
-        if (!preorder.length || !inorder.length) {
-            return null;
-        }
-
-        let node = new TreeNode(preorder[0]);
-
-        let i = inorder.indexOf(node.val);
-        let preorderL = preorder.slice(1, i + 1);
-        let preorderR = preorder.slice(i + 1);
-        let inorderL = inorder.slice(0, i);
-        let inorderR = inorder.slice(i + 1);
-
-        node.left = restoreTree(preorderL, inorderL);
-        node.right = restoreTree(preorderR, inorderR, node.right);
-
-        return node;
+    if (!preorder.length || !inorder.length) {
+        return null;
     }
 
-    return restoreTree(preorder, inorder);
+    let node = new TreeNode(preorder[0]);
+
+    let i = inorder.indexOf(node.val);
+    let preorderL = preorder.slice(1, i + 1);
+    let preorderR = preorder.slice(i + 1);
+    let inorderL = inorder.slice(0, i);
+    let inorderR = inorder.slice(i + 1);
+
+    node.left = buildTree(preorderL, inorderL);
+    node.right = buildTree(preorderR, inorderR);
+
+    return node;
 };
 
 console.log(buildTree([1, 2, 4, 5, 3, 6, 7], [4, 2, 5, 1, 6, 3, 7]));
