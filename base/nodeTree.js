@@ -196,11 +196,34 @@ let tree4 = {
     }
 };
 
-let arr = {
-    preorder: [
-        {}
-    ],
-    ineorder: []
+let searchTree = {
+    val: 4,
+    left: {
+        val: 2,
+        left: {
+            val: 1,
+            left: null,
+            right: null
+        },
+        right: {
+            val: 3,
+            left: null,
+            right: null
+        }
+    },
+    right: {
+        val: 6,
+        left: {
+            val: 5,
+            left: null,
+            right: null
+        },
+        right: {
+            val: 7,
+            left: null,
+            right: null
+        }
+    }
 }
 
 module.exports = {
@@ -209,4 +232,5 @@ module.exports = {
     tree2,
     tree3,
     tree4,
+    searchTree
 };
