@@ -47,6 +47,6 @@ var isValidBST = function (root) {
     return isSearchTree;
 };
 
-const tree = require('./base/nodeTree').tree1;
+const tree = require('./base/nodeTree').searchTree;
 
 isValidBST(tree)

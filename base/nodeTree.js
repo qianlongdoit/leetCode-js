@@ -197,32 +197,40 @@ let tree4 = {
 };
 
 let searchTree = {
-    val: 4,
+    val: 6,
     left: {
-        val: 2,
+        val: 9,
         left: {
-            val: 1,
-            left: null,
-            right: null
+            val: 2,
+            left: {
+                val: 1,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 3,
+                left: null,
+                right: null
+            }
         },
         right: {
-            val: 3,
+            val: 5,
             left: null,
             right: null
         }
     },
     right: {
-        val: 6,
+        val: 13,
         left: {
-            val: 5,
+            val: 8,
             left: null,
-            right: null
+            right: {
+                val: 4,
+                left: null,
+                right: null
+            }
         },
-        right: {
-            val: 7,
-            left: null,
-            right: null
-        }
+        right: null
     }
 }
 
