@@ -84,7 +84,6 @@ recoverTree = function (root) {
                     s1 = pre;
                 }
                 s2 = head;
-                debugger
             }
 
             pre = head;
@@ -96,7 +95,6 @@ recoverTree = function (root) {
         var temp = s1.val;
         s1.val = s2.val;
         s2.val = temp;
-        debugger
     }
 
     // console.log(root);
