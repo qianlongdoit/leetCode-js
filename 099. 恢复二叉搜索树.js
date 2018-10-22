@@ -25,6 +25,7 @@ function TreeNode(val) {
     this.val = val;
     this.left = this.right = null;
 }
+
 /**对二叉树进行左中右遍历即可得搜索树的升序排列
  * 如果一个升序数组有2个数进行了交换
  * 那么观察可知，一定有2次降序的地方
@@ -33,7 +34,7 @@ function TreeNode(val) {
  * @param {TreeNode} root
  * @return {void} Do not return anything, modify root in-place instead.
  */
-var recoverTree = function(root) {
+var recoverTree = function (root) {
     let pre = null;
     let s1 = null;
     let s2 = null;
@@ -43,8 +44,8 @@ var recoverTree = function(root) {
         if (root === null) return;
         _traversal(root.left);
 
-        if (pre != null && pre.val > root.val) {
-            if (s1 == null) {
+        if (pre !== null && pre.val > root.val) {
+            if (s1 === null) {
                 s1 = pre;
             }
             s2 = root;
@@ -60,6 +61,45 @@ var recoverTree = function(root) {
         s1.val = s2.val;
         s2.val = temp;
     }
+};
+
+recoverTree = function (root) {
+    if (root === null) return;
+
+    let stack = [];
+    let head = root;
+    let pre = null;
+    let s1 = null;
+    let s2 = null;
+
+    while (stack.length || head !== null) {
+        if (head !== null) {
+            stack.push(head)
+            head = head.left;
+        } else {
+            head = stack.pop();
+
+            if (pre !== null && pre.val > head.val) {
+                if (s1 === null) {
+                    s1 = pre;
+                }
+                s2 = head;
+                debugger
+            }
+
+            pre = head;
+            head = head.right;
+        }
+
+    }
+    if (s1 != null && s2 != null) {
+        var temp = s1.val;
+        s1.val = s2.val;
+        s2.val = temp;
+        debugger
+    }
+
+    // console.log(root);
 };
 
 const node = require('./base/nodeTree').searchTree;
