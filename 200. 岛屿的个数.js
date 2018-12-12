@@ -81,3 +81,37 @@ let grid = [
     ["0", "0", "0", "0", "0"]
 ];
 console.log(numIslands(grid));
+
+/**非常巧妙的方法
+ * 从头开始遍历，如果碰到为'1'的点，则将岛屿全部缩小到这个点，岛屿数+1
+ * 碰到'0'则跳过
+ * 这样遍历完，1的数量就是岛屿的数量，而1的数量在开始就记录了
+ *
+ * @param grid
+ * @returns {number}
+ */
+numIslands = function (grid) {
+    let res = 0;
+
+    const _shrinkIland = (grid, x, y) => {
+        if (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) return;
+        if (grid[x][y] === '0') return;
+
+        grid[x][y] = '0';
+        _shrinkIland(grid, x- 1, y);
+        _shrinkIland(grid, x, y - 1);
+        _shrinkIland(grid, x, y + 1);
+        _shrinkIland(grid, x + 1, y);
+    };
+
+    grid.forEach((row, x) => {
+        row.forEach((column, y) => {
+            if (grid[x][y] === '1') {
+                _shrinkIland(grid, x, y);
+                res++;
+            }
+        })
+    });
+
+    return res;
+};
