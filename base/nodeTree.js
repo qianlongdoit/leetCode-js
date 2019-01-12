@@ -185,7 +185,7 @@ let tree4 = {
         val: 20,
         left: {
             val: 15,
-            left:null,
+            left: null,
             right: null
         },
         right: {
@@ -234,11 +234,42 @@ let searchTree = {
     }
 }
 
+let balanceTree = {
+    val: 1,
+    left: {
+        val: 2,
+        left: {
+            val: 4,
+            left: {
+                val: 6,
+                left: null,
+                right: null
+            },
+            right: {
+                val: 7,
+                left: null,
+                right: null
+            }
+        },
+        right: {
+            val: 5,
+            left: null,
+            right: null
+        }
+    },
+    right: {
+        val: 3,
+        left: null,
+        right: null
+    }
+};
+
 module.exports = {
     tree,
     tree1,
     tree2,
     tree3,
     tree4,
-    searchTree
+    searchTree,
+    balanceTree
 };
