@@ -38,7 +38,7 @@ var maxDepth = function(root) {
                 next = next.concat(node.children);
             }
         }
-        deep++;e
+        deep++;
         current = next;
         next = [];
     }
