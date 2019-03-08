@@ -46,6 +46,17 @@ var maxDepth = function(root) {
     return deep;
 };
 
+maxDepth = function (root) {
+    if (!root) return 0;
+    let deep = 0;
+
+    for (let i = 0; i < root.children.length; i++) {
+        deep = Math.max(maxDepth(root.children[i]), deep)
+    }
+
+    return deep + 1;
+};
+
 let tree4 = {
     "$id":"1",
     "children":[
