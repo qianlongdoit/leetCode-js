@@ -22,7 +22,9 @@
  *     this.next = null;
  * }
  */
-/**
+
+/**没有意识到这是一个排序的链表。。。
+ * 算了不改了，就这样吧
  * @param {ListNode} head
  * @return {ListNode}
  */
@@ -40,6 +42,24 @@ var deleteDuplicates = function(head) {
         } else {
             pre.next = current.next ? current.next : null;
             current = current.next;
+        }
+    }
+
+    return head;
+};
+
+deleteDuplicates = function(head) {
+    if (head === null) return head;
+    let arr = [];
+
+    let current = head;
+    arr.push(head.val);
+    while (current.next !== null) {
+        if (!arr.includes(current.next.val)) {
+            arr.push(current.next.val);
+            current = current.next;
+        } else {
+            current.next = current.next.next;
         }
     }
 
