@@ -42,7 +42,7 @@ var singleNumber = function(nums) {
         a10 = (a10 ^ n) & ~b01;
     });
 
-    return b;
+    return b01;
 };
 
 console.log(singleNumber([1, 1, 1, 2, 2, 2, 99]));
