@@ -1,7 +1,8 @@
 /**
  * Created by Administrator on 2018/4/25.
  */
-/**
+/**总体的思路就是，比较a、b组合中的较大者，然后按较大者排序在前面的规则来
+ * 这样获得就是最大的数
  * @param {number[]} nums
  * @return {string}
  */
