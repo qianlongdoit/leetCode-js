@@ -52,7 +52,12 @@ var lowestCommonAncestor = function (root, p, q) {
 
 const {completeTree} = require('./base/nodeTree');
 
-
+/**getPath 这个方法递归、循环都可以，为了改成循环了
+ *
+ * @param node
+ * @param targets
+ * @return {Array}
+ */
 function getPath(node, targets = []) {
     let res = [];
     let path = [];
@@ -80,6 +85,8 @@ function getPath(node, targets = []) {
             path.pop();
             let temp = cur;
             let parent = path[path.length - 1];
+            //  注意此处，由于遍历的顺序是中 左 右，所以对于路径里面判断该层遍历是否结束需要有限看是否是右节点
+            //  可能出现单左节点的情况
             let child = parent.right || parent.left;
             while (child === temp) {
                 // 当不是父子节点的时候，说明该层的节点已经遍历结束
